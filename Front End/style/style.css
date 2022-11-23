@@ -1,0 +1,16 @@
+.custom-bg{
+    background: #673ab7!important;
+}
+
+#logo{
+    height: 60px;
+    border-radius: 10px;
+}
+
+#logo:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#card{
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
