@@ -88,7 +88,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Product getProductByName(String name) throws ProductException {
-		Product p = pr.findByPName(name);
+		Product p = pr.findBypName(name);
 		if (p != null) {
 			return p;
 		} else {

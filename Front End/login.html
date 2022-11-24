@@ -17,11 +17,36 @@
     <title>Login</title>
 </head>
 <body>
-    <div id="nav">
-      
+    <div id="nav"></div>
+    <div id="row mt-5">
+        <div class="col-md-4 offset-md-4">
+            <div class="card" id="card">
+                 <div class="card-body">
+                    <h3 class="text-center my-3">Sign In here</h3>
+          <form onsubmit="signin()">
+              <div class="form-group">
+                <label for="email">User Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Your Email">
+              </div>
+              <div class="form-group">
+                <label for="password">User Password</label>
+                <input type="password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="Enter Your password">
+              </div>
+              <div class="form-group">
+                <label for="adminid">Admin ID</label>
+                <input type="text" class="form-control" id="adminid" aria-describedby="emailHelp" placeholder="If You Are An Admin Put Your ID Here...">
+              </div>
+              <div class="container text-center">
+                 <button type="submit" class="btn btn-outline-success" id="reg">Sign In</button>
+                 <button class="btn btn-outline-warning">Reset</button>
+              </div>
+          </form>
+                 </div>
+            </div>
+        </div>
     </div>
-    <h1>Hello</h1>
     
     <div id="footer"></div>
 </body>
+<script src="./script/login.js"></script>
 </html>

@@ -23,7 +23,7 @@
             <div class="card" id="card">
                  <div class="card-body">
                     <h3 class="text-center my-3">Sign up here</h3>
-          <form>
+          <form onsubmit="register()">
             <div class="form-group">
                 <label for="name">User Name</label>
                 <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Your User Name">
@@ -45,7 +45,7 @@
                 <textarea class="form-control" id="address" placeholder="Enter Your Address"></textarea>
               </div>
               <div class="container text-center">
-                 <button class="btn btn-outline-success">Register</button>
+                 <button type="submit" class="btn btn-outline-success" id="reg">Register</button>
                  <button class="btn btn-outline-warning">Reset</button>
               </div>
           </form>
@@ -56,4 +56,5 @@
     
     <div id="footer"></div>
 </body>
+<script src="./script/register.js"></script>
 </html>

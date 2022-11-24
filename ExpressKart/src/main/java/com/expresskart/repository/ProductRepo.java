@@ -11,7 +11,7 @@ import com.expresskart.model.Product;
 @Repository
 public interface ProductRepo extends JpaRepository<Product,Integer>{
 
-	public Product findByPName(String pName);
+	public Product findBypName(String pName);
 	
 	public List<Product> findByCategory(Category category);
 }
