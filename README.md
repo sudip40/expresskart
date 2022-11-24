@@ -36,7 +36,7 @@
  - Update the port number, username and password as per your local database configuration.
  - For current application we have used the below properties.
 ```
-    server.port=8888
+    server.port=8080
 
     spring.datasource.url=jdbc:mysql://localhost:3306/expresskart;
     spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
