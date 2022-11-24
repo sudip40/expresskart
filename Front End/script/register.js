@@ -14,11 +14,11 @@ async function register(e){
             'Content-Type':'application/json'
         },
         body: JSON.stringify({
-            userName: name,
-            userEmail:email,
-            userPassword:password,
-            userPhone:phone,
-            userAddress:address
+            username: name,
+            useremail: email,
+            userpassword: password,
+            userphone: phone,
+            useraddress: address
         })
     });
     console.log("Yes");

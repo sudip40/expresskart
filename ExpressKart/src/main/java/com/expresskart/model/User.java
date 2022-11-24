@@ -22,20 +22,22 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Getter
+@Setter
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer userId;
+	private Integer userid;
 	
 	@Column(unique = true)
-	@Size(min = 2, max = 25, message = "Minimun Username size must be greater than 2 and less than 6")
-	private String userName;
+	@Size(min = 2, max = 50, message = "Minimun Username size must be greater than 2 and less than 6")
+	private String username;
 	@Email
 	@Column(unique = true)
-	private String userEmail;
+	private String useremail;
 	@NotNull
 	@Pattern(regexp = "[a-zA-Z0-9]{6,12}", message = "Password must contain between 6 to 12 characters. Must be alphanumeric with both Upper and lowercase characters.")
-	private String userPassword;
-	private String userPhone;
-	private String userAddress;
+	private String userpassword;
+	private String userphone;
+	private String useraddress;
 }
