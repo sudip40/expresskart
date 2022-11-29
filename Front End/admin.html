@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="./img/expresskart.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="module" src="./script/index.js" ></script>
+    <title>ExpressKart</title>
+</head>
+  <body>
+    <div id="nav"></div>
+    <div id="msg"></div>
+       <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-4">
+                  <div class="card c" data-toggle="modal" data-target="#show-users-modal" id="viewusers">
+                      <div class="card-body text-center">
+                        <div class="container">
+                            <img style="max-width: 130px;" class="img-fluid" src="./img/users.png" alt="">
+                        </div>
+                        <h3 id="un">Original Numbers</h3>
+                        <h2 class="text-uppercase text-muted">Users</h2>
+                      </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card c" data-toggle="modal" data-target="#show-categorydetails-modal" id="viewcategory">
+                    <div class="card-body text-center">
+                        <div class="container">
+                            <img style="max-width: 130px;" class="img-fluid" src="./img/list.png" alt="">
+                        </div>
+                        <h3 id="cn">Original Numbers</h3>
+                      <h2 class="text-uppercase text-muted">Categories</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card c"  data-toggle="modal" data-target="#show-productdetails-modal" id="viewproduct">
+                    <div class="card-body text-center">
+                        <div class="container">
+                            <img style="max-width: 130px;" class="img-fluid" src="./img/package.png" alt="">
+                        </div>
+                        <h3 id="pn">Original Numbers</h3>
+                      <h2 class="text-uppercase text-muted">Products</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card c" data-toggle="modal" data-target="#add-category-modal">
+                    <div class="card-body text-center">
+                      <div class="container">
+                          <img style="max-width: 130px;" class="img-fluid" src="./img/apps.png" alt="">
+                      </div>
+                      
+                      <h2 class="text-uppercase text-muted">Add Category</h2>
+                    </div>
+                </div>
+          </div>
+          <div class="col-md-6">
+              <div class="card c" data-toggle="modal" data-target="#add-product-modal" id="ap">
+                  <div class="card-body text-center">
+                      <div class="container">
+                          <img style="max-width: 130px;" class="img-fluid" src="./img/plus.png" alt="">
+                      </div>
+                      
+                    <h2 class="text-uppercase text-muted">Add Products</h2>
+                  </div>
+              </div>
+          </div>
+        </div>
+       </div>
+
+    <!-- add category modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="add-category-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header custom-bg text-white">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add Category Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="addcategory()">
+          <div class="from-group">
+            <input type="text" id="cattitle" class="form-control" name="catTitle" placeholder="Enter Category Title" required />
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Enter Category Description" name="catDescription" id="catdesc" class="form-control mt-3" cols="30" rows="10" required></textarea>
+          </div>
+          <div class="container text-center">
+            <button class="btn btn-outline-success">Add Category</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--end of add category modal -->
+
+
+  <!-- add product modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="add-product-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header custom-bg text-white">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add Product Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="addproduct()">
+          <div class="from-group">
+            <input id="protitle" type="text" class="form-control" name="proTitle" placeholder="Enter Product Title" required />
+          </div>
+          <select name="Category" id="sc">
+            <option value="Category">Category</option>
+          </select>
+          <div class="from-group">
+            <input id="prophoto" type="text" class="form-control mt-3" name="proPhoto" placeholder="Enter Product Photo Link" required />
+          </div>
+          <div class="from-group">
+            <input id="proprice" type="number" class="form-control mt-3" name="proPrice" placeholder="Enter Product Price" required />
+          </div>
+          <div class="from-group">
+            <input id="prodiscount" type="number" class="form-control mt-3" name="proDicount" placeholder="Enter Product Discount" required />
+          </div>
+          <div class="from-group">
+            <input id="proquantity" type="number" class="form-control mt-3" name="proQuantity" placeholder="Enter Product Quantity" required />
+          </div>
+          <div class="form-group">
+            <textarea  placeholder="Enter Product Description" name="proDescription" id="prodesc" class="form-control mt-3" cols="30" rows="10" required></textarea>
+          </div>
+          <div class="container text-center">
+            <button type="submit" class="btn btn-outline-success" id="add">Add Product</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end of add product modal -->
+
+<!-- show all users modal -->
+<div class="modal fade" id="show-users-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header custom-bg text-white">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add Category Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table id="table">
+          <tr>
+            <th>User Id</th>
+            <th>User Name</th>
+            <th>User Email</th>
+            <th>User Phone</th>
+            <th>User Address</th>
+            <th>Remove</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of show all users modal -->
+
+<!-- show all category modal -->
+<div class="modal fade" id="show-categorydetails-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header custom-bg text-white">
+        <h5 class="modal-title" id="exampleModalLongTitle">Category Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table id="table2">
+          <tr>
+            <th>Category Id</th>
+            <th>Category Title</th>
+            <th>Category Description</th>
+            <th>Remove</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of show all category modal -->
+
+<!-- show all category modal -->
+<div class="modal fade" id="show-productdetails-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content modal-xl">
+      <div class="modal-header custom-bg text-white">
+        <h5 class="modal-title" id="exampleModalLongTitle">Product Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table id="table3">
+          <tr>
+            <th>Product Id</th>
+            <th>Product Title</th>
+            <th>Product Photo</th>
+            <th>Product Description</th>
+            <th>Product Price</th>
+            <th>Product Discount</th>
+            <th>Product Quantity</th>
+            <th>Category ID</th>
+            <th>Category Name</th>
+            <th>Remove</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of show all product modal -->
+    <div id="footer"></div>
+  </body>
+  <script src="./script/admin.js"></script>
+</html>

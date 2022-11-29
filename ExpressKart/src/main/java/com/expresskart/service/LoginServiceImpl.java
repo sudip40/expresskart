@@ -29,7 +29,10 @@ public class LoginServiceImpl implements LoginService {
 		User u = ur.findByUseremail(dto.getUseremail());
 		
 		if (u != null){
-			if(dto.getUserpassword().equals(u.getUserpassword())) {
+			if(sd.findById(u.getUserid()).isPresent()) {
+				throw new LoginException("You are already Logged In!");
+			}
+		   else if(dto.getUserpassword().equals(u.getUserpassword())) {
 			String key = RandomString.make(6);
 
 			CurrentUserSession currentUserSession = new CurrentUserSession(u.getUserid(), key, dto.getUseremail(), LocalDateTime.now());

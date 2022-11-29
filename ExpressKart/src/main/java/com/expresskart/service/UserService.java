@@ -14,13 +14,15 @@ public interface UserService {
 
 	public User addCustomer(User user) throws UserException;
 
+	public List<User> viewAllUser() throws UserException;
+
 	public User updateCustomer(User user) throws UserException;
 
 	public User deleteCustomer(Integer id) throws UserException;
-	
+
 	public List<Product> viewAllProducts() throws ProductException;
-	
-	public List<Product> getProductByCategory(String cname) throws ProductException,CategoryException;
-	
+
+	public List<Product> getProductByCategory(String cname) throws ProductException, CategoryException;
+
 	public Product getProductByName(String name) throws ProductException;
 }

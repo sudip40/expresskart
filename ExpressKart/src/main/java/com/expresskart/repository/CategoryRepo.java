@@ -6,5 +6,5 @@ import com.expresskart.model.Category;
 
 public interface CategoryRepo extends JpaRepository<Category, Integer>{
 
-	public Category findByCategoryTitle(String categoryTitle);
+	public Category findByCategorytitle(String categorytitle);;
 }

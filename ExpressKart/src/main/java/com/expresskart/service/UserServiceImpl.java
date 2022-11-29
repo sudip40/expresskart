@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<Product> getProductByCategory(String cname) throws ProductException,CategoryException{
-		Category c=cr.findByCategoryTitle(cname);
+		Category c=cr.findByCategorytitle(cname);
 		if(c!=null) {
 			List<Product> products=pr.findByCategory(c);
 			if(products.size()>0) {
@@ -88,11 +88,22 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Product getProductByName(String name) throws ProductException {
-		Product p = pr.findBypName(name);
+		Product p = pr.findByPname(name);
 		if (p != null) {
 			return p;
 		} else {
 			throw new ProductException("Product does not exists");
+		}
+	}
+
+	@Override
+	public List<User> viewAllUser() throws UserException {
+		List<User> users=ur.findAll();
+		if(users.size()>0) {
+			return users;
+		}
+		else {
+			throw new UserException("No user to display");
 		}
 	}
 

@@ -14,3 +14,63 @@
     margin-top: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+.c:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: #e2e2e2;
+}
+.c{
+    cursor: pointer;
+    border-radius: 10px;
+}
+#sc{
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid lightgrey;
+    padding: 7px 0px;
+}
+table{
+    width: 100%;
+    text-align: center;
+    
+}
+table,tr,th,td{
+    border: 1px solid black;
+}
+.remove{
+    background: red;
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding: 3px;
+}
+#m{
+    background: black;
+}
+
+#pro{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+}
+.procard{
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.procard>img{
+    height: 70%;
+}
+.dis{
+    width: fit-content;
+    padding: 3px;
+    border-radius: 5px;
+    background: #f7bb77;
+}
+.procard:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#ac{
+    text-align: center;
+    font-weight: bold;
+}

@@ -71,4 +71,11 @@ public class UserController {
 		Product p=us.getProductByName(name);
 		return new ResponseEntity<Product>(p,HttpStatus.FOUND);
 	}
+	
+	@CrossOrigin
+	@GetMapping("/viewallusers")
+	public ResponseEntity<List<User>> viewAllUser() throws UserException{
+		List<User> users=us.viewAllUser();
+		return new ResponseEntity<List<User>>(users,HttpStatus.FOUND);
+	}
 }

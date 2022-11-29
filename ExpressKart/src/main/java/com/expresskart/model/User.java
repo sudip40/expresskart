@@ -39,5 +39,6 @@ public class User {
 	@Pattern(regexp = "[a-zA-Z0-9]{6,12}", message = "Password must contain between 6 to 12 characters. Must be alphanumeric with both Upper and lowercase characters.")
 	private String userpassword;
 	private String userphone;
+	@Column(length=1500)
 	private String useraddress;
 }
