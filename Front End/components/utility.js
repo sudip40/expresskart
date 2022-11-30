@@ -25,13 +25,13 @@ let navbar=()=>{
         </li>
       </ul>
         
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto" id="ul">
       <li class="nav-item active">
           <a class="nav-link" href="login.html">Login</a>
-        </li>
+      </li>
         <li class="nav-item active">
           <a class="nav-link" href="register.html">Register</a>
-        </li>
+      </li>
       </ul>
     </div>
     </div>

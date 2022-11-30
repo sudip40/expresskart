@@ -74,3 +74,20 @@ table,tr,th,td{
     text-align: center;
     font-weight: bold;
 }
+#d{
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.crt{
+    background: #673ab7;
+    border: none;
+    color: white;
+    font-size: 25px;
+    outline: none;
+}
+.crt:hover{
+    font-size: 27px;
+}

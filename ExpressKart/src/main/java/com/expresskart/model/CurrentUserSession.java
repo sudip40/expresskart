@@ -25,7 +25,7 @@ public class CurrentUserSession {
 
 	@Id
 	@Column(unique = true)
-	private Integer userId;
+	private Integer userid;
 
 	private String uuid;
 

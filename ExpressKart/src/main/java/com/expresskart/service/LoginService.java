@@ -8,6 +8,8 @@ public interface LoginService {
 	
 	public CurrentUserSession logIntoAccount(LoginDTO dto)throws LoginException;
 
-	public String logOutFromAccount(String key)throws LoginException;
+	public CurrentUserSession logOutFromAccount(String key)throws LoginException;
+	
+	public CurrentUserSession checklogin(String key)throws LoginException;
     
 }

@@ -27,8 +27,9 @@ function display(data){
     }
     if(flag){
         document.getElementById("msg").innerHTML=`<div class="alert alert-success text-center" role="alert">
-        Admin Sign in Successfull!
+        Sign in Successfull!
       </div>`;
+      localStorage.setItem("id",JSON.stringify([data.userid,data.uuid,data.email]));
       setTimeout(() => { window.location.href="index.html"; }, 3000);
     }
     else{
@@ -65,7 +66,7 @@ function display(data){
     }
     if(flag){
         document.getElementById("msg").innerHTML=`<div class="alert alert-success text-center" role="alert">
-        Sign in Successfull!
+        Admin Sign in Successfull!
       </div>`;
       setTimeout(() => { window.location.href="admin.html"; }, 3000);
     }

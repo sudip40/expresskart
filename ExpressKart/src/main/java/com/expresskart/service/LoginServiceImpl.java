@@ -50,7 +50,7 @@ public class LoginServiceImpl implements LoginService {
 	}
 
 	@Override
-	public String logOutFromAccount(String key) throws LoginException {
+	public CurrentUserSession logOutFromAccount(String key) throws LoginException {
 		CurrentUserSession validCustomerSession = sd.findByUuid(key);
 
 		if (validCustomerSession == null) {
@@ -60,7 +60,18 @@ public class LoginServiceImpl implements LoginService {
 
 		sd.delete(validCustomerSession);
 
-		return "Logged Out !";
+		return validCustomerSession;
+	}
+
+	@Override
+	public CurrentUserSession checklogin(String key) throws LoginException {
+		CurrentUserSession validCustomerSession = sd.findByUuid(key);
+
+		if (validCustomerSession == null) {
+			throw new LoginException("User Not Logged In with this User name");
+		}
+		
+		return validCustomerSession;
 	}
 
 }
