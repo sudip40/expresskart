@@ -16,19 +16,18 @@
 - Login, Logout Module
 - Admin Module
 - Order Module 
-- Customer,Address Module
-- Plants Module
-- Planters Module
-- Seeds Module
+- User,Address Module
+- Product Module
+- Category Module
 ## Features
 - User and Admin authentication & validation with session uuid.
 ### Admin Features:
 * Administrator Role for the entire application
-* Only  admins can add/update/delete plants, planters, seeds from main database
+* Only  admins can add/update/delete products, category from main database
 * Admin can access the details of different users and orders.
 ### User Features:
 * Registering themselves with application, and logging in to get the valid session token
-* Viewing list of available plants, planters, seeds and order items of them.
+* Viewing list of available products, categories and order items of them.
 * Only logged in user can access his orders, profile updation and other features.
 
 ## Installation & Run
