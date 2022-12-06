@@ -9,14 +9,18 @@
     display: block;
     width: 80%;
 }
+#left>img{
+    height: 75%;
+}
+#left{
+    width: 34%;
+}
 #right{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    background-image: url(/img/pay.jpg);
-    background-size: cover;
-    background-repeat: none;
+    background-color: pink;
 }
 h1{
     text-align: center;
@@ -24,10 +28,11 @@ h1{
 #card{
     width: 80%;
     height: 60%;
-    margin-top: 30%;
+    margin-top: 20%;
     background-color: cadetblue;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 #card>form{
     width: fit-content;

@@ -20,25 +20,25 @@ for(let i=0;i<products.length;i++){
     .then((data) => display(data));
     function display(data){
         console.log(data);
-        // let flag=true;
-        // let msg;
-        // for(let j in data){
-        //     if(j=="error"){
-        //       flag=false;
-        //       msg=data["message"];
-        //     }
-        // }
-        // if(flag){
-        //     document.getElementById("msg").innerHTML=`<div class="alert alert-success text-center" role="alert">
-        //     New Product Added Successfully!
-        //   </div>`;
-        //  //  setTimeout(() => { window.location.href="index.html"; }, 3000);
-        // }
-        // else{
-        //     document.getElementById("msg").innerHTML=`<div class="alert alert-danger text-center" role="alert">
-        //     ${msg}
-        //   </div>`;
-        // }
+        let flag=true;
+        let msg;
+        for(let j in data){
+            if(j=="error"){
+              flag=false;
+              msg=data["message"];
+            }
+        }
+        if(flag){
+            document.getElementById("msg").innerHTML=`<div class="alert alert-success text-center" role="alert">
+            Order Placed Successfully!
+          </div>`;
+         setTimeout(() => { window.location.href="index.html"; }, 3000);
+        }
+        else{
+            document.getElementById("msg").innerHTML=`<div class="alert alert-danger text-center" role="alert">
+            ${msg}
+          </div>`;
+        }
      }
 }
 }
