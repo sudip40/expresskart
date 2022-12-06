@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/payment.css">
+    <title>Payment</title>
+</head>
+<body>
+    <div id="msg"></div>
+    <div class="main">
+        <div id="left">
+            <img src="./img/thankyou.jpg" alt="">
+           </div>
+           <div id="right">
+            <h1>Pay Here</h1>
+                <div id="card">
+                    
+                   <form>
+                       <label>Card Number</label>
+                       <input type="number" placeholder="Enter Your Card Number Here" required>
+                       <label>Expiration Date</label>
+                       <input type="date" placeholder="Enter Expiration Date Here" required>
+                       <label>CVV</label>
+                       <input type="number" placeholder="Enter Your CVV Here" required>
+                       <label>Cardholder Name</label>
+                       <input type="name" placeholder="Enter Cardholder Name" required>
+                       <button id="submit">Pay Now</button>
+                   </form>
+                </div>
+           </div>
+    </div>
+    <script src="./script/payment.js"></script>
+</body>
+</html>

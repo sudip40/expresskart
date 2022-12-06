@@ -395,3 +395,11 @@ document.getElementById("logout").addEventListener("click", function () {
     console.log(data);
   }
 });
+
+document.getElementById("check").addEventListener('click',function(){
+  
+  let p=JSON.parse(localStorage.getItem("cartdata"));
+  if(p!=null){
+   window.location.href="payment.html";
+  }
+})

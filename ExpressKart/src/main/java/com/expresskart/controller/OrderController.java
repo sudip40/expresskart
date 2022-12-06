@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.expresskart.exceptions.LoginException;
 import com.expresskart.exceptions.OrderException;
 import com.expresskart.model.OrderDetails;
+import com.expresskart.model.Orders;
+import com.expresskart.model.ProductQuantity;
 import com.expresskart.model.UserDTO;
 import com.expresskart.service.OrderDetailsServiceImpl;
 
@@ -29,30 +31,30 @@ public class OrderController {
 	private OrderDetailsServiceImpl odr;
 	
 	@CrossOrigin
-	@PostMapping("/create/{key}")
-	public ResponseEntity<OrderDetails> placeOrder(@RequestBody ArrayList<UserDTO> udto,@PathVariable("key") String key) throws OrderException, LoginException{
-		OrderDetails od=odr.placeOrder(udto, key);
-		return new ResponseEntity<OrderDetails>(od,HttpStatus.CREATED);
+	@PostMapping("/create/{key}/{tc}")
+	public ResponseEntity<Orders> placeOrder(@PathVariable("key") String key,@PathVariable("tc") Integer totalcost,@RequestBody ProductQuantity pq) throws OrderException, LoginException{
+		Orders od=odr.placeOrder(key,totalcost,pq);
+		return new ResponseEntity<Orders>(od,HttpStatus.CREATED);
 	}
 
 	@CrossOrigin
 	@GetMapping("/get/{id}/{key}")
-	public ResponseEntity<OrderDetails> getorderbyId(@PathVariable("id") Integer id,@PathVariable("key") String key) throws OrderException, LoginException{
-		OrderDetails od=odr.getorderbyId(id, key);
-		return new ResponseEntity<OrderDetails>(od,HttpStatus.FOUND);
+	public ResponseEntity<Orders> getorderbyId(@PathVariable("id") Integer id,@PathVariable("key") String key) throws OrderException, LoginException{
+		Orders od=odr.getorderbyId(id, key);
+		return new ResponseEntity<Orders>(od,HttpStatus.FOUND);
 	}
 
 	@CrossOrigin
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<OrderDetails> deleteOrder(@PathVariable("id") Integer id) throws OrderException{
-		OrderDetails od=odr.deleteOrder(id);
-		return new ResponseEntity<OrderDetails>(od,HttpStatus.FOUND);
+	public ResponseEntity<Orders> deleteOrder(@PathVariable("id") Integer id) throws OrderException{
+		Orders od=odr.deleteOrder(id);
+		return new ResponseEntity<Orders>(od,HttpStatus.FOUND);
 	}
 
 	@CrossOrigin
 	@GetMapping("/viewall")
-	public ResponseEntity<List<OrderDetails>> viewAllOrder() throws OrderException{
-		List<OrderDetails> ods=odr.viewAllOrder();
-		return new ResponseEntity<List<OrderDetails>>(ods,HttpStatus.FOUND);
+	public ResponseEntity<List<Orders>> viewAllOrder() throws OrderException{
+		List<Orders> ods=odr.viewAllOrder();
+		return new ResponseEntity<List<Orders>>(ods,HttpStatus.FOUND);
 	}
 }

@@ -1,49 +1,31 @@
 package com.expresskart.model;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.Setter;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class OrderDetails {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer bookingOrderId;
-
-	@NonNull
-	private LocalDate orderDate;
-
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer orderDetailsid;
 	private Integer quantity;
-
-	private Integer totalCost;
-
-	@ManyToOne
-	@JoinColumn(name = "usrid")
-	@JsonProperty(access = Access.WRITE_ONLY)
-	private User customer;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "orderdetails")
-	private List<Product> products = new ArrayList<>();
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Orders order;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Product product;
 }
